@@ -93,6 +93,27 @@
             margin: 0;
             z-index: 9999;
         }
+        .mobile-controls {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .download-btn {
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover {
+            background: #45a049;
+        }
+        .pdf-viewer-mobile {
+            display: none;
+        }
         @media (max-width: 768px) {
             body {
                 padding: 10px;
@@ -104,7 +125,24 @@
                 font-size: 18px;
             }
             .pdf-container {
-                padding-bottom: 100%;
+                display: none;
+            }
+            .pdf-viewer-mobile {
+                display: block;
+                background: #fff;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .mobile-controls {
+                flex-direction: column;
+            }
+            .download-btn {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+                font-size: 16px;
+                padding: 15px;
             }
         }
     </style>
@@ -114,6 +152,20 @@
 
     <details>
         <summary>1-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M1.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M1.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container1">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container1')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -122,10 +174,27 @@
             </button>
             <iframe src="files/M1.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>2-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M2.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M2.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container2">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container2')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -134,10 +203,27 @@
             </button>
             <iframe src="files/M2.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>3-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M3.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M3.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container3">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container3')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -146,10 +232,27 @@
             </button>
             <iframe src="files/M3.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>4-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M4.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M4.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container4">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container4')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -158,10 +261,27 @@
             </button>
             <iframe src="files/M4.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>5-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M5.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M5.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container5">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container5')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -170,10 +290,27 @@
             </button>
             <iframe src="files/M5.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>6-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M6.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M6.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container6">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container6')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -182,10 +319,27 @@
             </button>
             <iframe src="files/M6.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>7-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M7.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M7.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container7">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container7')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -194,10 +348,27 @@
             </button>
             <iframe src="files/M7.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>8-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M8.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M8.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container8">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container8')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -206,10 +377,27 @@
             </button>
             <iframe src="files/M8.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>9-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M9.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M9.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container9">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container9')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -218,10 +406,27 @@
             </button>
             <iframe src="files/M9.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>10-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M10.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M10.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container10">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container10')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -230,10 +435,27 @@
             </button>
             <iframe src="files/M10.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>11-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M11.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M11.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container11">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container11')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -242,10 +464,27 @@
             </button>
             <iframe src="files/M11.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>12-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M12.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M12.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container12">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container12')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -254,10 +493,27 @@
             </button>
             <iframe src="files/M12.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <details>
         <summary>13-ma'ruza</summary>
+        <div class="mobile-controls">
+            <a href="files/M13.pdf" download class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M8 0L4 4h3v8h2V4h3L8 0zM0 14h16v2H0v-2z"/>
+                </svg>
+                Yuklab olish
+            </a>
+            <a href="files/M13.pdf" target="_blank" class="download-btn">
+                <svg width="16" height="16" viewBox="0 0 16 16" style="vertical-align: middle; margin-right: 5px;">
+                    <path fill="currentColor" d="M14 16H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h8l4 4v10c0 1.1-.9 2-2 2zM9 1H2c-.6 0-1 .4-1 1v12c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V5L9 1z"/>
+                </svg>
+                PDF da ochish
+            </a>
+        </div>
         <div class="pdf-container" id="container13">
             <button class="fullscreen-btn" onclick="toggleFullscreen('container13')">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="white">
@@ -266,9 +522,37 @@
             </button>
             <iframe src="files/M13.pdf"></iframe>
         </div>
+        <div class="pdf-viewer-mobile">
+            <p>PDF faylni ko'rish uchun yuqoridagi tugmalardan foydalaning</p>
+        </div>
     </details>
 
     <script>
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        function handleMobileView() {
+            if (isMobile()) {
+                document.querySelectorAll('.pdf-container').forEach(container => {
+                    container.style.display = 'none';
+                });
+                document.querySelectorAll('.pdf-viewer-mobile').forEach(viewer => {
+                    viewer.style.display = 'block';
+                });
+            } else {
+                document.querySelectorAll('.pdf-container').forEach(container => {
+                    container.style.display = 'block';
+                });
+                document.querySelectorAll('.pdf-viewer-mobile').forEach(viewer => {
+                    viewer.style.display = 'none';
+                });
+            }
+        }
+
+        window.addEventListener('load', handleMobileView);
+        window.addEventListener('resize', handleMobileView);
+
         function toggleFullscreen(containerId) {
             const container = document.getElementById(containerId);
             if (!document.fullscreenElement) {
